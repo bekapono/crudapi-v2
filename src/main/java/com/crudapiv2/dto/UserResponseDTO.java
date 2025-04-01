@@ -5,10 +5,10 @@ public class UserResponseDTO {
     //  data back to the client.
 
     // Key Fields
-    private String username;
-    private String email;
-    private String firstname;
-    private String lastname;
+    private final String username;
+    private final String email;
+    private final String firstname;
+    private final String lastname;
 
     // Object will be immutable, hence need constructor to set fields.
     public UserResponseDTO(String username, String email, String firstname, String lastname) {
@@ -24,7 +24,4 @@ public class UserResponseDTO {
     public String getEmail() { return email; }
     public String getFirstname() { return firstname; }
     public String getLastname() { return lastname; }
-
-
-
 }
