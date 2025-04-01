@@ -13,6 +13,15 @@ public class User implements Serializable {
     // No-arg constructor
     public User() {}
 
+    // full constructor
+    public User(String username, String email, String firstname, String lastname, String password) {
+        this.username= username;
+        this.email = email;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+    }
+
     // Attributes - Column identifiers
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

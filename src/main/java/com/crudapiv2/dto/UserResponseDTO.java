@@ -19,7 +19,7 @@ public class UserResponseDTO {
 
     }
 
-    // getters
+    // getters only, no setters so state can't be altered after creation.
     public String getUsername() { return username; }
     public String getEmail() { return email; }
     public String getFirstname() { return firstname; }
