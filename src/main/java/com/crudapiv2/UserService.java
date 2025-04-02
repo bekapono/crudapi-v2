@@ -19,7 +19,11 @@ public class UserService {
     // convert entity -> to dto mapper.
     // receive a user, and return a dto
     private UserResponseDTO mapToResponseDTO(User user) {
-        return new UserResponseDTO(user.getUsername(), user.getEmail(), user.getFirstname(), user.getLastname());
+        return new UserResponseDTO(
+                user.getUsername(),
+                user.getEmail(),
+                user.getFirstname(),
+                user.getLastname());
     }
 
     // convert dto -> entity
@@ -27,9 +31,9 @@ public class UserService {
     private User mapToNewEntity(UserRequestDTO dto) {
         return new User(
                 dto.getUsername(),
-                dto.getEmail(),
                 dto.getFirstname(),
                 dto.getLastname(),
+                dto.getEmail(),
                 dto.getPassword()
                 );
     }
