@@ -12,10 +12,14 @@ public class UserRequestDTO {
     // constructors
     public UserRequestDTO(String username, String email, String firstname, String lastname, String password) {
         this.username = username;
-        this.email = email;
+        this.email = email; // moved from line 15 to 17.
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
+    }
+
+    public UserRequestDTO() {
+        // required by Jackson
     }
 
     // getters only, no setters so state can't be altered after creation.

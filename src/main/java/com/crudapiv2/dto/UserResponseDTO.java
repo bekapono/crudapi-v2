@@ -17,6 +17,7 @@ public class UserResponseDTO {
         this.firstname = firstname;
         this.lastname = lastname;
 
+
     }
 
     // getters only, no setters so state can't be altered after creation.

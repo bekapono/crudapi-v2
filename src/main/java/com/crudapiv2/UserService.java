@@ -23,7 +23,7 @@ public class UserService {
                 user.getUsername(),
                 user.getEmail(),
                 user.getFirstname(),
-                user.getLastname());
+                user.getLastname()); // moved from line 24 to 26 because of mapping issue.
     }
 
     // convert dto -> entity
@@ -31,15 +31,15 @@ public class UserService {
     private User mapToNewEntity(UserRequestDTO dto) {
         return new User(
                 dto.getUsername(),
+                dto.getEmail(),
                 dto.getFirstname(),
                 dto.getLastname(),
-                dto.getEmail(),
                 dto.getPassword()
                 );
     }
 
     // create user
-    private UserResponseDTO createUser(UserRequestDTO dto) {
+    public UserResponseDTO createUser(UserRequestDTO dto) {
         User user = mapToNewEntity(dto); // mapping dto to new entity
         User savedUser = userRepository.save(user); // saving the new entity in database
         return mapToResponseDTO(savedUser); // mapping new entity back to dto

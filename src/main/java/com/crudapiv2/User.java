@@ -30,8 +30,8 @@ public class User implements Serializable {
     @Column(name = "user_name" ,unique = true, nullable = false)
     private String username;
 
-    @Column(nullable = false)
-    private String password;
+    @Column(name = "email", unique = true, nullable = false)
+    private String email;
 
     @Column(name = "firstname", nullable = false)
     private String firstname;
@@ -39,10 +39,10 @@ public class User implements Serializable {
     @Column(name = "lastname", nullable = false)
     private String lastname;
 
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
+    @Column(nullable = false)
+    private String password;
 
-    @Column(name = "phone", unique = true, nullable = false)
+    @Column(name = "phone", unique = true)
     private String phone;
 
     // Getters & Setters
