@@ -35,6 +35,11 @@ public class UserService {
     }
 
     // create user
+    private UserResponseDTO createUser(UserRequestDTO dto) {
+        User user = mapToNewEntity(dto); // mapping dto to new entity
+        User savedUser = userRepository.save(user); // saving the new entity in database
+        return mapToResponseDTO(savedUser); // mapping new entity back to dto
+    }
 
     // find user by id
 
