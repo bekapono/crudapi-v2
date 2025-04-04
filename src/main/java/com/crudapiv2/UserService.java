@@ -2,6 +2,7 @@ package com.crudapiv2;
 
 import com.crudapiv2.dto.UserRequestDTO;
 import com.crudapiv2.dto.UserResponseDTO;
+import com.crudapiv2.dto.UserUpdateDTO;
 import org.springframework.stereotype.Service;
 import com.crudapiv2.UserRepository;
 
@@ -45,7 +46,37 @@ public class UserService {
         return mapToResponseDTO(savedUser); // mapping new entity back to dto
     }
 
+    // connecting to userUpdateDTO
+    public UserResponseDTO updateUser(Long id, UserUpdateDTO dto) {
+        User user = findUserById(id);
+
+        // check nulls for username, email, firstname, lastname
+        if (dto.getUsername() != null) {
+            user.setUsername(dto.getUsername());
+        }
+
+        if (dto.getEmail() != null) {
+            user.setEmail(dto.getEmail());
+        }
+
+        if (dto.getFirstname() != null) {
+            user.setFirstname(dto.getFirstname());
+        }
+
+        if (dto.getLastname() != null) {
+            user.setLastname(dto.getLastname());
+        }
+
+        user = userRepository.save(user);
+
+        return mapToResponseDTO(user);
+    }
+
     // find user by id
+    public User findUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
+    }
 
     // return all users
 
