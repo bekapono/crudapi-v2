@@ -18,6 +18,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/{id}")
+    public UserResponseDTO getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)  // Response output 201.
     public UserResponseDTO createUser(@RequestBody UserRequestDTO dto) {

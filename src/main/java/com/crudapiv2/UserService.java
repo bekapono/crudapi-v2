@@ -79,6 +79,10 @@ public class UserService {
     }
 
     // return all users
+    public UserResponseDTO getUserById(Long id) {
+        User user = findUserById(id);
+        return mapToResponseDTO(user);
+    }
 
     // update username
 
