@@ -1,5 +1,6 @@
 package com.crudapiv2.dto;
 
+/*
 public class UserRequestDTO {
 
     // Key Fields
@@ -28,4 +29,6 @@ public class UserRequestDTO {
     public String getFirstname() { return firstname; }
     public String getLastname() { return lastname; }
     public String getPassword() { return password; }
-}
+} */
+
+public record UserRequestDTO (String username, String email, String firstname, String lastname, String password) {}

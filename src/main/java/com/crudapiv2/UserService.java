@@ -31,12 +31,20 @@ public class UserService {
     // receive dto object, and return a user.
     private User mapToNewEntity(UserRequestDTO dto) {
         return new User(
+                /*
                 dto.getUsername(),
                 dto.getEmail(),
                 dto.getFirstname(),
                 dto.getLastname(),
                 dto.getPassword()
                 );
+                */
+                dto.username(),
+                dto.email(),
+                dto.firstname(),
+                dto.lastname(),
+                dto.password()
+        );
     }
 
     // create user
