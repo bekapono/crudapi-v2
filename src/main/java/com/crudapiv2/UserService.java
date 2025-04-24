@@ -67,7 +67,7 @@ public class UserService {
             user.setLastname(dto.getLastname());
         }
 
-        user = userRepository.save(user);
+        user = userRepository.save(user); // saving to database before returning dto
 
         return mapToResponseDTO(user);
     }
@@ -83,14 +83,6 @@ public class UserService {
         User user = findUserById(id);
         return mapToResponseDTO(user);
     }
-
-    // update username
-
-    // update user email
-
-    // update first name
-
-    // update last name
 
     // soft delete down the line.
 
