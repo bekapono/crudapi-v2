@@ -1,5 +1,6 @@
 package com.crudapiv2.dto;
 
+/*
 public class UserResponseDTO {
     // dto defines what's API returns when someone calls any endpoint sends user
     //  data back to the client.
@@ -23,4 +24,7 @@ public class UserResponseDTO {
     public String getEmail() { return email; }
     public String getFirstname() { return firstname; }
     public String getLastname() { return lastname; }
-}
+}*/
+
+// New DTO as a Record
+public record UserResponseDTO (String username, String email, String firstname, String lastname) {}
